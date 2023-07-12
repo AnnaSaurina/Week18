@@ -108,3 +108,10 @@ const container = document.getElementById('container');
 let estimation = '';
 let name = '';
 
+// создаю обработчик события
+
+document.addEventListener('heroesPage', () => {
+    
+
+
+})
