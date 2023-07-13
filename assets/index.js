@@ -111,6 +111,41 @@ let name = '';
 // создаю обработчик события
 
 document.addEventListener('heroesPage', () => {
+    const heroesArrJSONParse = JSON.parse(heroesArrJSON);
+    let heroesCard = '';
+    for (let hero of heroesArrJSONParse) {
+      heroesCard += `
+      <div class="hero_card">
+          <p class="hero_card-name">${hero.name}</p>
+          <p class="hero_card-universe">Вселенная: ${hero.universe}</p>
+          <p class="hero_card-alterego">Альтерэго: ${hero.alterego}</p>
+          <p class="hero_card-occupation">Профессия: ${hero.occupation}</p>
+          <p class="hero_card-friends">Дпрузья: ${hero.friends}</p>
+          <p class="hero_card-superpowers">Супер-сила: ${hero.superpowers}</p>
+          <img class="hero_card-img" src="${hero.url}" alt="hero">
+          <div class="hero_card-points">
+              <div class="hero_card-points-list">
+                  <input id="hero_card-points-5${hero.name}" type="radio" class="hero_card-points-input"
+                      name="${hero.name}" value="5">
+                  <label for="hero_card-points-5${hero.name}" class="hero_card-points-label"></label>
+                  <input id="hero_card-points-4${hero.name}" type="radio" class="hero_card-points-input"
+                      name="${hero.name}" value="4">
+                  <label for="hero_card-points-4${hero.name}" class="hero_card-points-label"></label>
+                  <input id="hero_card-points-3${hero.name}" type="radio" class="hero_card-points-input"
+                      name="${hero.name}" value="3">
+                  <label for="hero_card-points-3${hero.name}" class="hero_card-points-label"></label>
+                  <input id="hero_card-points-2${hero.name}" type="radio" class="hero_card-points-input"
+                      name="${hero.name}" value="2">
+                  <label for="hero_card-points-2${hero.name}" class="hero_card-points-label"></label>
+                  <input id="hero_card-points-1${hero.name}" type="radio" class="hero_card-points-input"
+                      name="${hero.name}" value="1">
+                  <label for="hero_card-points-1${hero.name}" class="hero_card-points-label"></label>
+              </div>
+          </div>
+      </div>`;
+      container.innerHTML = heroesCard;        
+    }
+
     
 
 
