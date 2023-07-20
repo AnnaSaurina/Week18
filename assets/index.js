@@ -110,7 +110,7 @@ let saveName = '';
 
 // создаю обработчик события
 
-document.addEventListener('heroesPage', () => {
+document.addEventListener("DOMContentLoaded", () => {
     const heroesArrJSONParse = JSON.parse(heroesArrJSON);
     let heroesCard = '';
     for (let hero of heroesArrJSONParse) {
